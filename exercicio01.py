@@ -5,7 +5,7 @@ print(conta01.nome)
 
 
 conta01.AtivarConta()
-conta01.Depositar(1000)
-conta01.AjustarLimite(1000)
-conta01.Sacar(1500)
+conta01.Depositar(100)
+conta01.AjustarLimite(100)
+conta01.Sacar(150)
 conta01.VerificarSaldo()

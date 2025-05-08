@@ -17,7 +17,7 @@ class ContaBancaria():
         if self.status == False:
             print ("A conta não está ativa")
         else:
-            deposito += self.saldo
+            self.saldo += deposito
             print(f" O valor do deposito é {deposito}")
     def VerificarSaldo(self):
         if self.status == False:
@@ -28,8 +28,10 @@ class ContaBancaria():
         if self.status == False:
             print ("A conta não está ativa")
         else:
-
-            if (self.saldo + self.limite) < saque:
+            soma=0
+            soma=self.saldo+self.limite
+            print(soma,self.saldo)
+            if soma < saque:
                 print("Valor Indisponivel")
             else:
                 self.saldo -= saque
@@ -39,6 +41,7 @@ class ContaBancaria():
         if self.status ==False:
             print ("A conta não está ativa")
         else:
-            self.limite+=limite
+            self.limite=limite
+            print("Limite ajustado")
 
 
