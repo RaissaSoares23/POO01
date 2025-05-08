@@ -9,7 +9,7 @@ class ContaBancaria():
 
     def AtivarConta(self):
         if self.status == False:
-            print ("Ativar Conta")
+            print ("Conta Ativada")
             self.status=True
         else:
             print ("A conta já está ativa")
@@ -27,11 +27,14 @@ class ContaBancaria():
     def Sacar(self,saque):
         if self.status == False:
             print ("A conta não está ativa")
-        elif self.saldo + self.limite < saque:
-            print("Valor Indisponivel")
         else:
-            self.saldo -= saque
-            print (f"Você sacou {saque} ")
+
+            if (self.saldo + self.limite) < saque:
+                print("Valor Indisponivel")
+            else:
+                self.saldo -= saque
+                print (f"Você sacou {saque} ")
+
     def AjustarLimite(self,limite):
         if self.status ==False:
             print ("A conta não está ativa")
