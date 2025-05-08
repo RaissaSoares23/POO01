@@ -3,9 +3,39 @@ class ContaBancaria():
         self.nome = nome
         self.numero = numero
         self.tipo = tipo
+        self.saldo=0
+        self.status = False
+        self.limite=0
 
-
-    def Depositar(self):
-    def Sacar (self):
     def AtivarConta(self):
+        if self.status == False:
+            print ("Ativar Conta")
+            self.status=True
+        else:
+            print ("A conta já está ativa")
+    def Depositar(self,deposito):
+        if self.status == False:
+            print ("A conta não está ativa")
+        else:
+            deposito += self.saldo
+            print(f" O valor do deposito é {deposito}")
     def VerificarSaldo(self):
+        if self.status == False:
+            print ("A conta não está ativa")
+        else:
+            print(f"O seu saldo é {self.saldo}")
+    def Sacar(self,saque):
+        if self.status == False:
+            print ("A conta não está ativa")
+        elif self.saldo + self.limite < saque:
+            print("Valor Indisponivel")
+        else:
+            self.saldo -= saque
+            print (f"Você sacou {saque} ")
+    def AjustarLimite(self,limite):
+        if self.status ==False:
+            print ("A conta não está ativa")
+        else:
+            self.limite+=limite
+
+
